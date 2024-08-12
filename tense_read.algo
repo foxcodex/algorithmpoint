@@ -1,0 +1,30 @@
+length_counter := 0
+word_counter := 0
+vowel_counter := 0
+in_word := False
+
+WHILE True DO
+    Read char
+    length_counter := length_counter + 1
+
+    IF char IN ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'] THEN
+        vowel_counter := vowel_counter + 1
+    END_IF
+
+    IF char != ' ' AND in_word = False THEN
+        word_counter := word_counter + 1
+        in_word := True
+    END_IF
+
+    IF char = ' ' THEN
+        in_word := False
+    END_IF
+
+    IF char = '.' THEN
+        BREAK
+    END_IF
+END_WHILE
+
+Write("Length of sentence: " + length_counter)
+Write("Number of words: " + word_counter)
+Write("Number of vowels: " + vowel_counter)
